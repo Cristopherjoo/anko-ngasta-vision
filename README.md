@@ -23,11 +23,13 @@ Para garantizar la estabilidad del sistema y el respeto absoluto a las invariant
 
 ### 🖥️ 3. Ecosistema de Interfaces de la Aplicación
 
+<br>
 
-<p align="center" style="margin: 30px 0;">
-  <img width="650" alt="Anko Ngasta Enterprise Interface" src="https://github.com/user-attachments/assets/2e4b9a0b-5fc2-4487-b3e3-5186fa24a822" />
+<p align="center">
+  <img width="650" alt="Anko Ngasta Enterprise Interface" src="https://github.com" />
 </p>
 
+<br>
 
 Anko Ngasta materializa su infraestructura a través de una interfaz reactiva avanzada en **PyQt6 (HighDPI-aware)**, estructurada en tres módulos visuales especializados:
 
