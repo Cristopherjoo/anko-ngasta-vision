@@ -26,7 +26,7 @@ Para garantizar la estabilidad del sistema y el respeto absoluto a las invariant
 <br>
 
 <p align="center">
-  <img width="650" alt="Anko Ngasta Enterprise Interface" src="https://github.com" />
+  <img width="650" alt="Anko Ngasta Enterprise Interface" src="https://github.com/user-attachments/assets/2e4b9a0b-5fc2-4487-b3e3-5186fa24a822" />
 </p>
 
 <br>
