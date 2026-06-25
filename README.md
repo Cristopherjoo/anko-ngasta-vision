@@ -43,7 +43,9 @@ CAID opera en una capa anterior al código. En lugar de saturar el chat de datos
 
 ### 🔄 4. El Pipeline de Ejecución Técnica
 
-![Pipeline de Ejecución Técnica CAID] <img width="689" height="757" alt="image" src="https://github.com/user-attachments/assets/2e4a8e72-586c-4e7d-8c98-dfbaae842387" />
+<p align="center">
+  <img width="689" height="757" alt="image" src="https://github.com/user-attachments/assets/2e4a8e72-586c-4e7d-8c98-dfbaae842387" />
+</p>
 
 
 El proceso exacto que sigue un agente inteligente al interactuar con un repositorio bajo la metodología CAID se encuentra completamente mapeado y estandarizado en el flujo de **image_8421ff.png**:
