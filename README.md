@@ -1,51 +1,227 @@
-# Documento 1: Visión de Producto y Arquitectura
+# Documento de Visión y Capacidades
 
-## Anko Ngasta Enterprise (v4.4.1)
+# Anko Ngasta
 
-**Plataforma de Ejecución de IA con Gobernanza Enforced y Arquitectura Dual-Domain**
+## Casa de conocimiento y colaboración humano-IA
 
-### 🎯 1. Declaración de Visión
+### Documento público de visión y capacidades
 
-Anko Ngasta es un ecosistema avanzado de interfaces y orquestación de Inteligencia Artificial diseñado bajo el paradigma de **Soberanía Operativa**. El sistema mitiga los riesgos de autonomía descontrolada y alucinaciones en entornos productivos mediante un modelo _Human-in-the-loop_ (HITL), actuando como un cortafuegos inteligente donde los agentes sintéticos proponen y justifican acciones, pero el operador humano retiene el control de ejecución definitivo.
+## 🌊 Origen del concepto
 
-> 💡 **Principio Central:** La Inteligencia Artificial en entornos críticos debe ser gobernada, no obedecida.
+**Anko Ngasta** toma inspiración de conceptos provenientes de lenguas originarias del norte de Chile.
 
-### 🏗️ 2. Arquitectura de Control: El Modelo Dual-Domain
+**Anko** representa el agua que fluye desde lo alto, la cascada o el flujo que entrega vida.
 
-Para garantizar la estabilidad del sistema y el respeto absoluto a las invariantes del diseño, la aplicación divide las responsabilidades en dos áreas estrictamente aisladas:
+**Ngasta** representa el espacio de residencia, comunidad o lugar donde algo habita.
 
-- **SYSTEM (`shared/`):** El núcleo inmutable que gestiona la infraestructura, la seguridad, el registro de tokens y las reglas de gobernanza.
-    
-- **APPLICATION (`apps/`):** La capa volátil donde residen los flujos de trabajo, las integraciones y las capacidades generativas de la IA.
-    
+Desde esta visión, Anko Ngasta representa:
 
-**Enforcement:** Las capacidades generativas tienen prohibido el acceso directo a funciones críticas de la infraestructura. Toda interacción se realiza obligatoriamente a través de una fachada única y unificada (`shared.domain_bridge.SystemAccessLayer`), auditada en tiempo de validación.
+> **Un espacio donde el conocimiento fluye y donde agentes, herramientas y personas colaboran dentro de un territorio gobernado.**
+
+La plataforma nace desde una necesidad práctica:
+
+Crear un entorno de trabajo asistido por inteligencia artificial que permita a una persona contar con capacidades similares a un equipo técnico multidisciplinario, manteniendo siempre supervisión humana sobre las decisiones.
+
+---
+
+# 🏠 La casa de consejeros digitales
+
+Anko Ngasta no está diseñado como un sistema donde la inteligencia artificial generativa (IAG) actúa sin límites.
+
+Su propósito es crear una comunidad de asistentes especializados:
+
+- agentes de análisis;
+- agentes de construcción;
+- agentes de revisión;
+- agentes de apoyo técnico.
+
+Estos agentes funcionan como **consejeros**:
+
+- analizan información;
+- entregan contexto;
+- proponen alternativas;
+- justifican sus observaciones.
+
+La decisión final permanece bajo control humano.
+
+
+---
 
 ### 🖥️ 3. Ecosistema de Interfaces de la Aplicación
-<br>
+
 
 <p align="center">
 <img width="650" alt="anko" src="https://github.com/user-attachments/assets/8d5fd604-a362-4053-8a45-a0b6131225e1" />
 </p>
-<br>
 
-Anko Ngasta materializa su infraestructura a través de una interfaz reactiva avanzada en **PyQt6 (HighDPI-aware)**, estructurada en tres módulos visuales especializados:
 
-- **🧪 El Sandbox de Co-Procesamiento (Team Sandbox):** Entorno colaborativo y aislado donde el usuario y la IA interactúan. Gestiona hilos de forma segura (_thread-safe_) mediante un enrutador de señales centralizado (`SignalRouter`), permitiendo inyectar contexto y probar código sin riesgo de contaminar el entorno productivo.
-    
-- **🕸️ El Visor de Grafos Semánticos (Knowledge Management):** Interfaz gráfica que mapea el repositorio de forma geométrica. Visualiza los límites de dominio (_Bounded Contexts_), las dependencias y los contratos de importación en tiempo real, permitiendo tanto al usuario como a la IA "ver" la estructura macro del proyecto.
-    
-- **📑 Panel de Auditoría y Trazabilidad (Approval Gateway):** La consola central de gobernanza humana. Muestra el flujo de propuestas de la IA, su análisis automatizado de riesgo y su bitácora de justificación en un cuaderno de notas visible para su autorización final.
-    
+---
 
-### 🔄 4. Motor de Metadatos Globales (El Whisper Codex)
+# 🎯 Problema que busca resolver
 
-El sistema recolecta continuamente información analítica tanto a nivel **micro** (métricas de cobertura de Pytest, análisis estático de Mypy, validaciones de importación) como **macro** (estado operativo del roadmap, contratos constitucionales). Toda esta metadata es consolidada dinámicamente en un **Diccionario Global persistido en JSON** (_Whisper Codex_), sincronizándose automáticamente con los disparadores de integración continua (CI/CD) mediante el guardrail de automatización `doc_sync_check.py`.
+En proyectos tecnológicos complejos, una de las mayores dificultades no siempre es escribir código, sino:
 
-### 📊 5. Gestión de Deuda Técnica y Roadmap (Bootstrapping de Integridad)
+- comprender sistemas existentes;
+- mantener contexto histórico;
+- evaluar consecuencias;
+- coordinar conocimiento técnico;
+- evitar decisiones sin información suficiente.
 
-El repositorio se encuentra en una fase activa de estabilización de su runtime bajo el siguiente mapa de ingeniería:
+Anko Ngasta busca reducir esa brecha creando un entorno donde el conocimiento del proyecto pueda ser organizado, consultado y validado.
 
-- **Fronteras en Refactorización:** El foco actual está en la migración de acoplamientos remanentes (accesos directos detectados desde la capa de aplicación hacia `shared.infrastructure`) para redirigirlos exclusivamente a través del Bridge.
-    
-- **Próximos Stoppers Críticos:** 1) Saneamiento de la inicialización en el entorno de `shared.security`. 2) Calibración de las políticas de importaciones permitidas del _Boundary Validator_ (`domain_boundary_validator_strict.py`).
+---
+
+# 🧠 Arquitectura basada en conocimiento y gobernanza
+
+La plataforma organiza el trabajo alrededor de tres principios:
+
+## Contexto
+
+Los sistemas inteligentes necesitan comprender el territorio donde trabajan.
+
+El sistema mantiene información estructurada del proyecto para facilitar análisis y colaboración.
+
+---
+
+## Memoria
+
+El conocimiento generado durante el proceso debe permanecer disponible.
+
+Para ello utiliza mecanismos de organización de metadata, relaciones y registros de evolución.
+
+---
+
+## ⚖️ Gobernanza
+
+El conocimiento y las acciones importantes deben seguir reglas definidas.
+
+Toda incorporación de conocimiento, cambio o ejecución relevante debe contar con un mecanismo de validación, que puede ser automático, manual o mediante procesos de integración y control como CI/CD.
+
+La validación permite mantener consistencia, trazabilidad y confianza en la evolución del sistema.
+
+---
+
+# 🕸️ Capacidades principales
+
+## 🧪 Sandbox colaborativo
+
+Espacio controlado donde usuario e inteligencias artificiales pueden colaborar en el análisis, construcción y evaluación de soluciones.
+
+Permite integrar diferentes capacidades de asistencia mediante configuraciones adaptables, manteniendo el contexto del proyecto y separando los espacios de experimentación del entorno principal.
+
+Los agentes funcionan como consejeros:
+
+- aportan análisis;
+- generan propuestas;
+- entregan perspectivas complementarias.
+
+La decisión final permanece bajo criterio humano.
+
+---
+
+## Visualización de conocimiento
+
+Representación gráfica de relaciones y estructuras para facilitar la comprensión de sistemas complejos.
+
+Permite observar conexiones, dependencias y organización del conocimiento.
+
+---
+
+## Trazabilidad y auditoría
+
+Registro del proceso de análisis y evolución del sistema.
+
+Permite comprender:
+
+- qué decisiones fueron tomadas;
+- qué información las respaldó;
+- cómo evolucionó el proyecto.
+
+---
+
+## 📚 Diccionario Global de Conocimiento
+
+El sistema mantiene un repositorio estructurado de información del proyecto, donde se almacena conocimiento validado sobre componentes, relaciones, decisiones y evolución del sistema.
+
+Este conocimiento puede ser utilizado para generar documentación, reportes y otros artefactos de apoyo, manteniendo coherencia con el contexto real del proyecto.
+
+Sus capacidades incluyen:
+
+organización de metadata técnica;
+registro de evolución del sistema;
+conservación de relaciones entre componentes;
+generación asistida de documentación técnica y artefactos de conocimiento;
+apoyo en análisis y comprensión del proyecto.
+
+---
+
+# 🏗️ Evolución del proyecto
+
+## v1.0 — Fundación del sistema
+
+Primer lanzamiento estable con:
+
+- interfaz gráfica basada en PyQt6;
+- separación de responsabilidades;
+- gestión estructurada de conocimiento;
+- integración inicial con capacidades de IA.
+
+---
+
+## v3.x — Arquitectura de dominios y gobernanza
+
+Evolución hacia:
+
+- separación entre núcleo del sistema y aplicaciones;
+- reglas de interacción;
+- validaciones arquitectónicas;
+- control de cambios.
+
+---
+
+## v4.x — Orquestación y conocimiento semántico
+
+Incorporación de:
+
+- gestión de roles de agentes;
+- colaboración multi-agente;
+- conocimiento semántico;
+- trazabilidad;
+- modelos de gobernanza.
+
+---
+
+# 🔒 Filosofía de diseño
+
+Anko Ngasta sigue un principio central:
+
+> La IAG debe ejecutarse bajo criterio de gobernanza.
+
+
+La persona aporta:
+
+- intención;
+- criterio;
+- contexto;
+- decisión final.
+
+---
+
+# 🌱 Estado actual
+
+Anko Ngasta continúa en evolución como proyecto experimental de arquitectura humano-IA.
+
+Su objetivo no es reemplazar equipos humanos, sino explorar cómo una persona puede ampliar sus capacidades mediante herramientas inteligentes, manteniendo principios de:
+
+- comprensión;
+- transparencia;
+- control;
+- responsabilidad.
+
+---
+
+# 🧭 Visión futura
+
+Construir un entorno donde conocimiento, herramientas e inteligencias colaboren dentro de un mismo territorio digital:
+
+una casa donde las ideas puedan crecer, ser revisadas y evolucionar bajo reglas claras.
