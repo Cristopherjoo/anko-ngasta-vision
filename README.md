@@ -22,13 +22,11 @@ Para garantizar la estabilidad del sistema y el respeto absoluto a las invariant
 **Enforcement:** Las capacidades generativas tienen prohibido el acceso directo a funciones críticas de la infraestructura. Toda interacción se realiza obligatoriamente a través de una fachada única y unificada (`shared.domain_bridge.SystemAccessLayer`), auditada en tiempo de validación.
 
 ### 🖥️ 3. Ecosistema de Interfaces de la Aplicación
-
 <br>
 
 <p align="center">
-  <img width="650" alt="Anko Ngasta Enterprise Interface" src="https://github.com/user-attachments/assets/2e4b9a0b-5fc2-4487-b3e3-5186fa24a822" />
+<img width="650" alt="anko" src="https://github.com/user-attachments/assets/8d5fd604-a362-4053-8a45-a0b6131225e1" />
 </p>
-
 <br>
 
 Anko Ngasta materializa su infraestructura a través de una interfaz reactiva avanzada en **PyQt6 (HighDPI-aware)**, estructurada en tres módulos visuales especializados:
